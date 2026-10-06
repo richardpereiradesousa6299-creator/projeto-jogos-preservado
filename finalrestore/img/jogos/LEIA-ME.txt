@@ -1,0 +1,2 @@
+Capas ilustradas (SVG) criadas para o projeto, uma por jogo.
+Para usar imagens reais, coloque o arquivo aqui e ajuste o campo "img" do jogo em js/dados.js (ex.: "celeste.jpg").

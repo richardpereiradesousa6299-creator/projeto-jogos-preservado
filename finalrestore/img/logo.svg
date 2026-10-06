@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Logo Descubra Jogos">
+  <rect width="48" height="48" rx="12" fill="#ff4d8d"/>
+  <path d="M10 20h28v10a5 5 0 0 1-9 3l-2-3h-6l-2 3a5 5 0 0 1-9-3z" fill="#1b1535"/>
+  <path d="M17 22v5M14.500 24.500h5" stroke="#35e0d0" stroke-width="2.500" stroke-linecap="round"/>
+  <circle cx="30" cy="23.500" r="1.800" fill="#ffd23f"/><circle cx="34" cy="26.500" r="1.800" fill="#ffd23f"/>
+</svg>

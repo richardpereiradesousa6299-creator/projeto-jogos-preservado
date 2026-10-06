@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubra Jogos: encontre o próximo jogo ideal pelo seu estilo, plataforma e tempo livre.">
+  <title>Encontre seu próximo jogo | Descubra Jogos</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Aplica o tema salvo antes de desenhar a página (evita "piscar") -->
+  <script>try { document.documentElement.setAttribute('data-bs-theme', localStorage.getItem('tema') || 'light'); } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-roxo" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html"><img src="img/logo.svg" alt="" width="36" height="36"> Descubra Jogos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link " href="pages/catalogo.html">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link " href="pages/quiz.html">Descubra seu jogo</a></li>
+            <li class="nav-item"><a class="nav-link " href="pages/contato.html">Contato</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/catalogo.html#favoritos">♥ Favoritos <span id="fav-badge" class="badge text-bg-danger">0</span></a></li>
+            <li class="nav-item"><button id="tema-btn" class="btn btn-sm btn-outline-light ms-lg-2" type="button" aria-label="Alternar tema claro e escuro">🌓</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container"><div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <h1 class="mb-3">Ache o <span class="destaque-texto">próximo jogo</span> que você não vai querer largar.</h1>
+          <p class="mb-4 lead-texto">Responda 4 perguntas rápidas e receba os 3 jogos que mais combinam com você, com a porcentagem de compatibilidade. Ou explore o catálogo, salve favoritos e filtre do seu jeito.</p>
+          <div class="d-flex flex-wrap gap-3"><a class="btn btn-rosa btn-lg" href="pages/quiz.html">Descobrir meu jogo</a><a class="btn btn-outline-info btn-lg" href="pages/catalogo.html">Ver catálogo</a></div>
+        </div>
+        <div class="col-lg-5"><aside class="perfil" aria-label="Exemplo de perfil de jogador">
+          <h2 class="h5">Perfil de jogador</h2><p class="small opacity-75">Exemplo: quem joga 1 hora por dia no celular</p>
+          <ul class="list-unstyled barras"><li>Relaxar<div class="barra b-relaxar"></div></li><li>Exploração<div class="barra b-explorar"></div></li><li>Estratégia<div class="barra b-estrategia"></div></li><li>Ação<div class="barra b-acao"></div></li></ul>
+          <p class="small text-info mb-0">Combina com: simulação, aventura leve e puzzles.</p>
+        </aside></div>
+      </div></div>
+    </section>
+
+    <!-- Números (contadores animados com jQuery) e gráfico (Chart.js) -->
+    <section class="secao claro" aria-labelledby="t-num"><div class="container"><div class="row align-items-center g-5">
+      <div class="col-lg-6"><h2 id="t-num" class="mb-4">O catálogo em números</h2>
+        <div class="numeros">
+          <div><span class="contador" data-alvo="50">0</span><small>jogos</small></div>
+          <div><span class="contador" data-alvo="6">0</span><small>gêneros</small></div>
+          <div><span class="contador" data-alvo="3">0</span><small>plataformas</small></div>
+          <div><span class="contador" data-alvo="4">0</span><small>perguntas no quiz</small></div>
+        </div></div>
+      <div class="col-lg-6"><div class="grafico-caixa"><canvas id="grafico" role="img" aria-label="Gráfico de jogos por gênero"></canvas></div></div>
+    </div></div></section>
+
+    <section id="generos" class="secao"><div class="container">
+      <h2>Escolha pelo gênero</h2><p class="mb-4">Cada cartão leva ao catálogo já filtrado.</p>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<div class="col"><article class="card h-100 card-genero b-rosa"><div class="card-body"><span class="icone" aria-hidden="true">⚔️</span><h3 class="h5 mt-2">Ação e aventura</h3><p>Combate, reflexo e histórias com ritmo.</p><a class="btn btn-sm btn-outline-secondary mt-auto" href="pages/catalogo.html#acao">Ver jogos</a></div></article></div>
+<div class="col"><article class="card h-100 card-genero b-ciano"><div class="card-body"><span class="icone" aria-hidden="true">🧠</span><h3 class="h5 mt-2">Estratégia</h3><p>Planejar, gerenciar e vencer pela cabeça.</p><a class="btn btn-sm btn-outline-secondary mt-auto" href="pages/catalogo.html#estrategia">Ver jogos</a></div></article></div>
+<div class="col"><article class="card h-100 card-genero b-amarelo"><div class="card-body"><span class="icone" aria-hidden="true">🌱</span><h3 class="h5 mt-2">Simulação</h3><p>Cuidar de uma fazenda, cidade ou rotina.</p><a class="btn btn-sm btn-outline-secondary mt-auto" href="pages/catalogo.html#simulacao">Ver jogos</a></div></article></div>
+<div class="col"><article class="card h-100 card-genero b-ciano"><div class="card-body"><span class="icone" aria-hidden="true">🧩</span><h3 class="h5 mt-2">Puzzle</h3><p>Lógica em fases curtas para qualquer intervalo.</p><a class="btn btn-sm btn-outline-secondary mt-auto" href="pages/catalogo.html#puzzle">Ver jogos</a></div></article></div>
+<div class="col"><article class="card h-100 card-genero b-amarelo"><div class="card-body"><span class="icone" aria-hidden="true">🏎️</span><h3 class="h5 mt-2">Corrida e esportes</h3><p>Competição rápida para jogar em grupo.</p><a class="btn btn-sm btn-outline-secondary mt-auto" href="pages/catalogo.html#corrida">Ver jogos</a></div></article></div>
+<div class="col"><article class="card h-100 card-genero b-rosa"><div class="card-body"><span class="icone" aria-hidden="true">🗺️</span><h3 class="h5 mt-2">RPG</h3><p>Evolua um personagem e viva grandes histórias.</p><a class="btn btn-sm btn-outline-secondary mt-auto" href="pages/catalogo.html#rpg">Ver jogos</a></div></article></div>
+      </div></div></section>
+
+    <section id="destaques" class="secao bg-roxo text-light"><div class="container">
+      <h2>Para começar hoje</h2><p class="mb-4">Quatro jogos de estilos diferentes para testar o que combina com você.</p>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+<div class="col"><article class="card h-100 bg-roxo-2 text-light border-0"><div class="capa g-simulacao"><span aria-hidden="true">🌱</span><img src="img/jogos/minecraft.svg" alt="Capa de Minecraft" loading="lazy" onerror="this.remove()"></div><div class="card-body"><h3 class="h5">Minecraft</h3><p class="text-info small mb-2">Sandbox e construção</p><p class="mb-0">Mundo aberto para coletar, construir e explorar, sozinho ou com amigos.</p></div></article></div>
+<div class="col"><article class="card h-100 bg-roxo-2 text-light border-0"><div class="capa g-simulacao"><span aria-hidden="true">🌱</span><img src="img/jogos/stardew-valley.svg" alt="Capa de Stardew Valley" loading="lazy" onerror="this.remove()"></div><div class="card-body"><h3 class="h5">Stardew Valley</h3><p class="text-info small mb-2">Simulação de fazenda</p><p class="mb-0">Plante, pesque e conheça os moradores da cidade, sem pressa.</p></div></article></div>
+<div class="col"><article class="card h-100 bg-roxo-2 text-light border-0"><div class="capa g-acao"><span aria-hidden="true">⚔️</span><img src="img/jogos/hollow-knight.svg" alt="Capa de Hollow Knight" loading="lazy" onerror="this.remove()"></div><div class="card-body"><h3 class="h5">Hollow Knight</h3><p class="text-info small mb-2">Ação e exploração 2D</p><p class="mb-0">Um reino subterrâneo cheio de segredos e chefes difíceis.</p></div></article></div>
+<div class="col"><article class="card h-100 bg-roxo-2 text-light border-0"><div class="capa g-acao"><span aria-hidden="true">⚔️</span><img src="img/jogos/celeste.svg" alt="Capa de Celeste" loading="lazy" onerror="this.remove()"></div><div class="card-body"><h3 class="h5">Celeste</h3><p class="text-info small mb-2">Plataforma e superação</p><p class="mb-0">Fases curtas de pulos precisos, com opções de assistência.</p></div></article></div>
+      </div><a class="btn btn-rosa mt-4" href="pages/catalogo.html">Ver os 50 jogos</a></div></section>
+
+    <section id="plataformas" class="secao"><div class="container">
+      <h2 class="mb-4">Em qual aparelho você joga?</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col"><article class="card h-100 borda-roxa"><div class="card-body"><h3 class="h5">📱 Celular</h3><p>Já está no seu bolso. Jogos curtos e muitos gratuitos.</p><p class="small mb-1"><strong>Vantagem:</strong> custo baixo.</p><p class="small mb-0"><strong>Cuidado:</strong> compras dentro do jogo.</p></div></article></div>
+        <div class="col"><article class="card h-100 borda-roxa"><div class="card-body"><h3 class="h5">🎮 Console</h3><p>Ligou e jogou. Bom para o sofá, sozinho ou com amigos.</p><p class="small mb-1"><strong>Vantagem:</strong> simplicidade.</p><p class="small mb-0"><strong>Cuidado:</strong> aparelho e jogos mais caros.</p></div></article></div>
+        <div class="col"><article class="card h-100 borda-roxa"><div class="card-body"><h3 class="h5">💻 Computador</h3><p>Maior variedade e promoções frequentes nas lojas digitais.</p><p class="small mb-1"><strong>Vantagem:</strong> catálogo enorme.</p><p class="small mb-0"><strong>Cuidado:</strong> confira os requisitos mínimos.</p></div></article></div>
+      </div></div></section>
+
+    <section class="secao claro"><div class="container">
+      <h2 class="mb-4">Como escolher em 4 passos</h2>
+      <ol class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 list-unstyled passos">
+        <li class="col"><h3 class="h6">1. Veja seu tempo livre</h3><p>Pouco tempo pede partidas curtas. Com mais tempo, vale um RPG ou aventura longa.</p></li>
+        <li class="col"><h3 class="h6">2. Defina o clima</h3><p>Relaxar, se desafiar ou jogar com alguém? Isso elimina metade das opções.</p></li>
+        <li class="col"><h3 class="h6">3. Confira o aparelho</h3><p>Veja se o jogo roda no que você tem.</p></li>
+        <li class="col"><h3 class="h6">4. Teste antes de comprar</h3><p>Procure demos, vídeos de gameplay e avaliações recentes.</p></li>
+      </ol></div></section>
+
+    <section id="duvidas" class="secao"><div class="container"><h2 class="mb-4">Dúvidas frequentes</h2><div class="accordion" id="faq">
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f0" aria-expanded="false" aria-controls="f0">Preciso de um computador potente?</button></h3><div id="f0" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Não. Muitos jogos ótimos rodam em computadores simples. Compare com os requisitos mínimos da página do jogo.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f1" aria-expanded="false" aria-controls="f1">Como sei se o jogo é adequado para a idade?</button></h3><div id="f1" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Veja a classificação indicativa na loja ou na embalagem. No Brasil, ela vai de livre até 18 anos.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2" aria-expanded="false" aria-controls="f2">Jogo gratuito é realmente de graça?</button></h3><div id="f2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Muitos são, mas alguns vendem itens dentro do jogo. Configure o bloqueio de compras, principalmente para crianças.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3" aria-expanded="false" aria-controls="f3">Meus favoritos ficam salvos?</button></h3><div id="f3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Sim, no navegador deste aparelho. Se limpar os dados do navegador, eles somem.</div></div></div>
+    </div></div></section>
+  </main>
+  <footer class="bg-footer text-light text-center py-4 small">
+    <div class="container"><p class="mb-0">Descubra Jogos é um projeto acadêmico de Programação Web I. Os nomes dos jogos pertencem aos seus respectivos donos.</p></div>
+  </footer>
+  <button id="topo-btn" class="btn btn-rosa shadow" type="button" aria-label="Voltar ao topo">&uarr;</button>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

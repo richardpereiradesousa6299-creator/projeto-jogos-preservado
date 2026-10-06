@@ -1,0 +1,78 @@
+/* ===== CSS próprio do Descubra Jogos (sobre o Bootstrap) ===== */
+:root { --roxo:#1b1535; --roxo-2:#2a2250; --rosa:#ff4d8d; --ciano:#35e0d0; --amarelo:#ffd23f; --lilas:#8a6cff; --laranja:#ff8a4d;
+        --fundo:#f6f4fb; --texto:#1b1535; --claro:#ebe6f8; --sombra:0 10px 30px rgba(27,21,53,.12);
+        --grad:linear-gradient(135deg,#ff4d8d,#ff8a4d); --grad-2:linear-gradient(135deg,#8a6cff,#35e0d0); }
+[data-bs-theme="dark"] { --fundo:#120e26; --texto:#f6f4fb; --claro:#1b1535; --sombra:0 10px 30px rgba(0,0,0,.4); }
+body { font-family:"Sora",system-ui,sans-serif; background:var(--fundo); color:var(--texto); line-height:1.65; }
+:focus-visible { outline:3px solid var(--amarelo); outline-offset:3px; }
+
+/* Cabeçalho e botões */
+.bg-roxo { background:var(--roxo); } .bg-roxo-2 { background:var(--roxo-2); } .bg-footer { background:#120e26; border-top:4px solid var(--rosa); }
+.navbar { border-bottom:3px solid var(--rosa); }
+.navbar .nav-link { font-weight:600; } .navbar .nav-link.active, .navbar .nav-link:hover { color:var(--ciano); }
+.btn-rosa { background:var(--grad); color:#fff; font-weight:600; border:0; box-shadow:0 6px 18px rgba(255,77,141,.4); transition:transform .15s, box-shadow .15s; }
+.btn-rosa:hover, .btn-rosa:focus { color:#fff; transform:translateY(-2px); box-shadow:0 10px 24px rgba(255,77,141,.55); }
+.progress-bar { background:var(--grad); color:#fff; font-weight:600; }
+
+/* Hero com brilho colorido */
+.hero { position:relative; overflow:hidden; color:#f6f4fb; padding:5.5rem 0;
+        background:radial-gradient(circle at 15% 20%,rgba(255,77,141,.45),transparent 40%),
+                   radial-gradient(circle at 85% 80%,rgba(53,224,208,.35),transparent 40%),
+                   radial-gradient(circle at 60% 10%,rgba(138,108,255,.4),transparent 35%), var(--roxo); }
+.hero h1 { font-size:clamp(2.2rem,5vw,3.8rem); font-weight:800; line-height:1.1; }
+.destaque-texto { background:linear-gradient(90deg,#ffd23f,#ff4d8d,#35e0d0); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.lead-texto { max-width:55ch; opacity:.92; font-size:1.1rem; }
+.perfil { background:rgba(42,34,80,.85); border:2px solid var(--ciano); border-radius:18px; padding:1.8rem; box-shadow:8px 8px 0 var(--rosa); }
+.barra { height:14px; border-radius:7px; background:var(--ciano); }
+.b-relaxar { width:90%; background:var(--grad-2); } .b-explorar { width:70%; background:linear-gradient(90deg,#ffd23f,#ff8a4d); }
+.b-estrategia { width:45%; background:var(--grad); } .b-acao { width:25%; background:#f6f4fb; }
+
+/* Banner das páginas internas */
+.banner { color:#fff; padding:3rem 0; background:radial-gradient(circle at 90% 20%,rgba(255,77,141,.5),transparent 45%), radial-gradient(circle at 10% 90%,rgba(53,224,208,.4),transparent 45%), var(--roxo); }
+.banner h1 { font-weight:800; font-size:clamp(1.9rem,4vw,2.8rem); } .banner p { max-width:60ch; opacity:.9; margin:0; }
+
+/* Seções e cartões */
+.secao { padding:4.5rem 0; } .secao h1, .secao h2 { font-weight:800; }
+.claro { background:var(--claro); }
+.card { border-radius:16px; overflow:hidden; box-shadow:var(--sombra); transition:transform .2s; }
+.card:hover { transform:translateY(-4px); }
+.icone { display:inline-grid; place-items:center; width:3.4rem; height:3.4rem; border-radius:14px; font-size:1.7rem; background:var(--grad); }
+.card-genero { border:0; border-top:6px solid var(--rosa); }
+.card-genero.b-ciano { border-top-color:var(--ciano); } .card-genero.b-ciano .icone { background:var(--grad-2); }
+.card-genero.b-amarelo { border-top-color:var(--amarelo); } .card-genero.b-amarelo .icone { background:linear-gradient(135deg,#ffd23f,#ff8a4d); }
+.borda-roxa { border:0; border-top:6px solid var(--lilas); }
+.col:nth-child(2) > .borda-roxa { border-top-color:var(--ciano); } .col:nth-child(3) > .borda-roxa { border-top-color:var(--amarelo); }
+.passos li { border-left:4px solid var(--rosa); padding-left:1rem; }
+.passos li:nth-child(2) { border-color:var(--ciano); } .passos li:nth-child(3) { border-color:var(--amarelo); } .passos li:nth-child(4) { border-color:var(--lilas); }
+
+/* Capas coloridas dos jogos (cor por gênero) */
+.capa { display:grid; place-items:center; height:110px; font-size:3rem; background:var(--grad); }
+.capa.g-estrategia { background:linear-gradient(135deg,#8a6cff,#4da3ff); } .capa.g-simulacao { background:linear-gradient(135deg,#35c46b,#35e0d0); }
+.capa.g-puzzle { background:linear-gradient(135deg,#35e0d0,#4da3ff); } .capa.g-corrida { background:linear-gradient(135deg,#ffd23f,#ff8a4d); }
+.capa.g-rpg { background:linear-gradient(135deg,#8a6cff,#ff4d8d); }
+.card-jogo { border:0; }
+[data-bs-theme="light"] .card-jogo { background:#fff; }
+
+/* ===== Flexbox e Grid próprios ===== */
+.barras li { display:grid; grid-template-columns:6.5rem 1fr; align-items:center; gap:.8rem; margin-bottom:.9rem; }   /* Grid */
+.numeros { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1.2rem; }                    /* Grid */
+.numeros div { display:flex; flex-direction:column; border-left:4px solid var(--rosa); padding-left:1rem; }         /* Flexbox */
+.contador { font-size:3.4rem; font-weight:800; line-height:1; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.card-genero .card-body { display:flex; flex-direction:column; gap:.3rem; }                                         /* Flexbox */
+.filtros { display:flex; flex-wrap:wrap; gap:.5rem; }                                                              /* Flexbox */
+.filtro { border-radius:50px; border-width:2px; font-weight:600; }
+.filtro.active { background:var(--grad); color:#fff; border-color:transparent; }
+[data-bs-theme="dark"] .filtro { color:#f6f4fb; border-color:#f6f4fb; }
+.grafico-caixa { max-width:420px; margin:0 auto; background:var(--fundo); border-radius:20px; padding:1.2rem; box-shadow:var(--sombra); }
+
+.btn-fav { background:transparent; border:2px solid var(--rosa); color:var(--rosa); }
+.btn-fav[aria-pressed="true"] { background:var(--rosa); color:#fff; }
+#topo-btn { position:fixed; right:1.2rem; bottom:1.2rem; display:none; z-index:1030; border-radius:50%; width:48px; height:48px; }
+
+@media (max-width:991px) { .hero { padding:3.5rem 0; } .secao { padding:3.5rem 0; } }
+@media (max-width:575px) { .perfil { box-shadow:5px 5px 0 var(--rosa); } .hero .btn-lg { width:100%; } .contador { font-size:2.6rem; } }
+@media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
+
+/* Imagens dos jogos: cobrem a capa colorida (se o arquivo não existir, o emoji aparece) */
+.capa { position:relative; overflow:hidden; height:150px; }
+.capa img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
